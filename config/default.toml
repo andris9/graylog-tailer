@@ -1,0 +1,11 @@
+
+source="./example/log.txt"
+
+[log]
+    [log.gelf]
+        enabled=false
+        component="graylog"
+        [log.gelf.options]
+            graylogPort=12201
+            graylogHostname="127.0.0.1"
+            connection="lan"
