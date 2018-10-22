@@ -51,9 +51,7 @@ function parseLine(line) {
         return;
     }
 
-    let message = {
-        component: 'graylog'
-    };
+    let message = {};
 
     message.timestamp =
         new Date(
@@ -98,7 +96,7 @@ function parseLine(line) {
     message._response_code = Number(remainder.pop());
     message._ua = remainder.join(' ');
 
-    message.short_message = 'GRAYLOG [' + message._user + '] ' + message._search_query;
+    message.short_message = '[' + message._user + '] ' + message._search_query;
     message.full_message = line;
 
     loggelf(message);
